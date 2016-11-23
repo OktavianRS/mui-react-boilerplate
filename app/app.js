@@ -22,6 +22,9 @@ import { useScroll } from 'react-router-scroll';
 import LanguageProvider from 'containers/LanguageProvider';
 import configureStore from './store';
 
+// Material-ui plugin
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
 // Import i18n messages
 import { translationMessages } from './i18n';
 
@@ -51,6 +54,8 @@ const rootRoute = {
   childRoutes: createRoutes(store),
 };
 
+// For mobile frendly click/tap events
+injectTapEventPlugin();
 
 const render = (translatedMessages) => {
   ReactDOM.render(
